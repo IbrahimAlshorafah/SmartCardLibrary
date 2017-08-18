@@ -1,0 +1,5 @@
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\NuGet.smartcardlibrary.NET\bin\Debug\NuGet.smartcardlibrary.NET.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\NuGet.smartcardlibrary.NET\bin\Debug\NuGet.smartcardlibrary.NET.pdb
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\NuGet.smartcardlibrary.NET\obj\Debug\NuGet.smartcardlibrary.NET.csprojResolveAssemblyReference.cache
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\NuGet.smartcardlibrary.NET\obj\Debug\NuGet.smartcardlibrary.NET.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\NuGet.smartcardlibrary.NET\obj\Debug\NuGet.smartcardlibrary.NET.pdb
