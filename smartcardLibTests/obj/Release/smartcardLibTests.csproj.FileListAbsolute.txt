@@ -1,0 +1,9 @@
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\smartcardLibTests.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\smartcardLibTests.pdb
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\smartcardLib.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\smartcardLib.pdb
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\obj\Release\smartcardLibTests.csprojResolveAssemblyReference.cache
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\obj\Release\smartcardLibTests.dll
+C:\Users\Ibahim\Documents\Visual Studio 2015\Projects\PKCS15\smartcardLibTests\obj\Release\smartcardLibTests.pdb

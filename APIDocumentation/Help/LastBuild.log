@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2016.9.17.0" projectFile="c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\APIDocumentation.shfbproj" started="1/11/2017 4:03:26 PM">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+    c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
+Using framework reflection data for &#39;.NET Framework 4.5&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2016.9.17.0
+Copyright &#169; 2006-2016, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\PKCS15\smartcardLib.csproj
+    Found project &#39;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\PKCS15\smartcardLib.csproj&#39;
+
+Parsing project files
+    Found assembly &#39;c:\users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\PKCS15\bin\Debug\smartcardLib.dll&#39;
+SHFB: Warning BE0007: A project with a different or higher framework version was found.  Changing project FrameworkVersion property from &#39;.NET Framework 4.5&#39; to &#39;.NET Framework 4.5.2&#39; for the build.
+
+References to include (excluding framework assemblies):
+    None
+
+Copying XML comments files
+    c:\users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\PKCS15\bin\Debug\smartcardLib.xml -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\smartcardLib.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.0530
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0010
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - GenerateRefInfo.proj]
+Build started 1/11/2017 4:03:26 PM.
+The target &quot;_ConvertPdbFiles&quot; listed in a BeforeTargets attribute at &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)&quot; does not exist in the project, and will be ignored.
+The target &quot;_CollectPdbFiles&quot; listed in an AfterTargets attribute at &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)&quot; does not exist in the project, and will be ignored.
+The target &quot;_CollectMdbFiles&quot; listed in a BeforeTargets attribute at &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)&quot; does not exist in the project, and will be ignored.
+The target &quot;_CopyMdbFiles&quot; listed in an AfterTargets attribute at &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)&quot; does not exist in the project, and will be ignored.
+Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  No source code context base path specified.  Source context information is unavailable.
+  Loaded 1 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 4 namespaces, 28 types, and 297 members
+  Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
+  XslTransform (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.42
+    Last step completed in 00:00:00.5225
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - TransformManifest.proj]
+Build started 1/11/2017 4:03:27 PM.
+Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
+  XslTransform (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\TransformManifest.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.51
+    Last step completed in 00:00:00.5856
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0245
+</buildStep>
+<buildStep step="CopyConceptualContent">
+Copying conceptual content...
+Copying standard token shared content file...
+Checking for other token files...
+Checking for code snippets files...
+Copying images and creating the media map file...
+Generating conceptual topic files
+    Parsing topic file &#39;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\Welcome.aml&#39;
+    c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\Welcome.aml -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\ddueXml\69ed03d0-5ba3-491d-8c16-dc7fbbaf1f58.xml
+    Parsing topic file &#39;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\VersionHistory\VersionHistory.aml&#39;
+    c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\VersionHistory\VersionHistory.aml -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\ddueXml\0f4e0191-5ccd-4849-9210-d2e57f36ab7c.xml
+    Parsing topic file &#39;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\VersionHistory\v1.0.0.0.aml&#39;
+    c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Content\VersionHistory\v1.0.0.0.aml -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\ddueXml\b160834a-03d5-4734-97e4-5fe370223a5f.xml
+    Last step completed in 00:00:00.0255
+</buildStep>
+<buildStep step="CreateConceptualTopicConfigs">
+Creating conceptual topic configuration files...
+    Companion files
+    _ContentMetadata_.xml
+    Merging topic IDs into manifest.xml
+    Last step completed in 00:00:00.0320
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\icons\Help.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\Help.png
+    Last step completed in 00:00:00.0040
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0005
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - GenerateIntermediateTOC.proj]
+Build started 1/11/2017 4:03:27 PM.
+Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00.1443
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.2390
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\sandcastle.config
+  Updating reference topic configurations.
+  Updating conceptual topic configurations.
+    Removing unused ExampleComponent.
+    Last step completed in 00:00:00.0035
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - BuildTopics.proj]
+Build started 1/11/2017 4:03:28 PM.
+Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\BuildTopics.proj&quot; on node 1 (default targets).
+BuildTopics:
+  BuildAssembler (v2016.9.17.0)
+  Copyright c 2006-2016, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [M:smartcardLib.PKCS15.AlgorithmInfo.getOperationsAsString] Missing &lt;returns&gt; documentation [c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\BuildTopics.proj]
+  Processed 364 topic(s)
+  1 warning(s)
+  CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
+  ResolveArtLinksComponent: Copying media files...
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 3 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+Done Building Project &quot;c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\BuildTopics.proj&quot; (default targets).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.06
+    Last step completed in 00:00:08.1541
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00.0040
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - ExtractHtmlInfo.proj]
+Sandcastle Help File Builder and Tools, version 2016.9.17.0
+Copyright c 2006-2016, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1
+Processed 364 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\SmartCardLibraryHelp.hhk
+Saving HTML Help 1 table of contents to c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\SmartCardLibraryHelp.hhc
+    Last step completed in 00:00:00.3810
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00.3515
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0050
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe - Build1xHelpFile.proj]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\SmartCardLibraryHelp.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 4 seconds
+  
+  366	Topics
+  
+  4,081	Local links
+  
+  870	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created c:\Users\zeeh3cker\documents\visual studio 2015\Projects\PKCS15\APIDocumentation\Help\Working\Output\HtmlHelp1\SmartCardLibraryHelp.chm, 436,253 bytes
+  
+  Compression decreased file by 2,408,338 bytes.
+  
+    Last step completed in 00:00:05.0835
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00.3575
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 1/11/2017 4:03:42 PM.  Total time: 00:00:16.4895
+
+</buildStep>
+</shfbBuild>

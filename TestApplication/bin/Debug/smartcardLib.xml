@@ -1,0 +1,2735 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>smartcardLib</name>
+    </assembly>
+    <members>
+        <member name="T:smartcardLib.PKCS15.AlgorithmIdentifier">
+             <summary>
+             Class the holds AlgorithmIdentifier object
+                AlgorithmIdentifier ::= SEQUENCE {
+                algorithm OBJECT IDENTIFIER,
+                parameters ANY DEFINED BY algorithm OPTIONAL }
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.AlgorithmIdentifier.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Construct from ASN1 
+            </summary>
+            <param name="tlv">ASN1 instance of AlgorithmIdentifier </param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.AlgorithmIdentifier.ToString">
+            <summary>
+            Converts algorithm identifier to a readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.AlgorithmInfo">
+             <summary>
+             The class decodes the following ASN1:
+             AlgorithmInfo ::= SEQUENCE {
+               reference Reference,
+               algorithm CIO-ALGORITHM.&amp;id({ AlgorithmSet}),
+               parameters CIO-ALGORITHM.&amp;Parameters({ AlgorithmSet}{@algorithm
+            }),
+               supportedOperations CIO-ALGORITHM.&amp;Operations({ AlgorithmSet}{@algorithm}),
+               objId CIO-ALGORITHM.&amp;objectIdentifier({ AlgorithmSet}{@algorithm}),
+               algRef Reference OPTIONAL
+             }
+             CIO-ALGORITHM::= CLASS {
+               &amp;id INTEGER UNIQUE,
+               &amp;Parameters,
+               &amp;Operations Operations,
+               &amp;objectIdentifier OBJECT IDENTIFIER OPTIONAL
+               } WITH SYNTAX
+            {
+                PARAMETERS &amp;Parameters OPERATIONS &amp;Operations ID &amp;id [OID &amp;objectIdentifier]
+             }
+             </summary>      
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.tlv">
+            <summary>
+            ASN1 object
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.reference">
+            <summary>
+            Reference
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.algorithm">
+            <summary>
+            Algorithm
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.parameters">
+            <summary>
+            Parameters
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.supportedOperations">
+            <summary>
+            Supported Operations
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.objId">
+            <summary>
+            Object ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.AlgorithmInfo.algRef">
+            <summary>
+            Algorithm reference
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.AlgorithmInfo.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor that takes ASN1 object
+            </summary>
+            <param name="basetlv">ASN1 object that holds AlgorithmInfo</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.AlgorithmInfo.getOperationsAsString">
+            <summary>
+            Get operation as string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.AlgorithmInfo.ToString">
+            <summary>
+            returns a string representation for the algorithm information
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.CertID">
+            <summary>
+            Encodes 
+            CertId ::= SEQUENCE {                 
+            issuer           GeneralName,                 
+            serialNumber     INTEGER } 
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.GeneralName">
+            <summary>
+             
+            The GeneralName object.
+            <pre>
+            GeneralName ::= CHOICE {
+            otherName[0]     OtherName,
+            rfc822Name[1]     IA5String,
+            dNSName[2]     IA5String,
+            x400Address[3]     ORAddress,
+            directoryName[4]     Name,
+            ediPartyName[5]     EDIPartyName,
+            uniformResourceIdentifier[6]     IA5String,
+            iPAddress[7]     OCTET STRING,
+            registeredID[8]     OBJECT IDENTIFIER}
+            
+            OtherName ::= Sequence {
+            type - id    OBJECT IDENTIFIER,
+            value[0] EXPLICIT ANY DEFINED BY type - id }
+            
+            EDIPartyName ::= Sequence {
+            nameAssigner[0]     DirectoryString OPTIONAL,
+            partyName[1]     DirectoryString }
+            </pre>    
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.OtherName">
+            <summary>
+            OtherName CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.Rfc822Name">
+            <summary>
+            Rfc822Name CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.DnsName">
+            <summary>
+            DNS name CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.X400Address">
+            <summary>
+            X400Address CHOICE
+            </summary>
+            <remarks> NOT supported</remarks>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.DirectoryName">
+            <summary>
+            Directory Name CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.EdiPartyName">
+            <summary>
+            EDI Party Name CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.UniformResourceIdentifier">
+            <summary>
+            Uniform Resource Identifier CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.IPAddress">
+            <summary>
+            IP address CHOICE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.GeneralName.RegisteredID">
+            <summary>
+            Registered Id CHOICE
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.GeneralName.Name">
+            <summary>
+            Name as string
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.GeneralName.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 object that holds General Name</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.GeneralName.ToString">
+            <summary>
+            Converts to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.OOBCertHash">
+            <summary>
+            OOBCertHash ::= SEQUENCE {                      
+                hashAlg     [0] AlgorithmIdentifier     OPTIONAL,                      
+                certId      [1] CertId                  OPTIONAL,                      
+                hashVal         BIT STRING                      -- hashVal is calculated over the DER encoding of the                      
+                -- self-signed certificate with the identifier certID.       
+                } 
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.OOBCertHash.hashAlg">
+            <summary>
+            Algorithm Identifier
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.OOBCertHash.certId">
+            <summary>
+            certificate Id
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.OOBCertHash.hashVal">
+            <summary>
+              hashVal is calculated over the DER encoding of the
+             self-signed certificate with the identifier certID.      
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.OOBCertHash.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor from asn
+            </summary>
+            <param name="tlv"></param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.OOBCertHash.ToString">
+            <summary>
+            Converts the CertHash to readable string 
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKC15Exception">
+            <summary>
+            PKCS15 exception
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKC15Exception.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKC15Exception.#ctor(System.String)">
+            <summary>
+            constructor with a message
+            </summary>
+            <param name="message">message</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKC15Exception.#ctor(System.String,System.Exception)">
+            <summary>
+            constructor with a message and inner exception
+            </summary>
+            <param name="message">message</param>
+            <param name="innerException">inner exception</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKC15Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            De-serialize constructor
+            </summary>
+            <param name="info">serialization info</param>
+            <param name="context">context streaming</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15">
+            <summary>
+            Shall encode PKCS 15 DDO ASN1 object:
+            
+            DDO ::= SEQUENCE {
+            oid OBJECT IDENTIFIER,
+            odfPath Path OPTIONAL,
+            tokenInfoPath[0] Path OPTIONAL,
+            unusedPath[1] Path OPTIONAL,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.#ctor(smartcardLib.Card.ICardController)">
+            <summary>
+            Constructor that should use a card controller
+            </summary>
+            <param name="card">Card Controller (Applet Controller)</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.readApplicationDirectory">
+            <summary>
+            Read Application directory [DIR]
+            if DIR application contains more than on AID information then this call will return Directory of AID and Application Templates
+            </summary>
+            <returns>Directory of AID and Application Templates</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.readCardObject(System.String,smartcardLib.PKCS15.PKCS15Path)">
+            <summary>
+            Read a card object at a specific location
+            </summary>
+            <param name="df">Directory File</param>
+            <param name="path">path under the directory file if the path is absolute then df can be null</param>
+            <returns>Data object</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.readCardObjects(System.String,smartcardLib.PKCS15.PKCS15Path)">
+            <summary>
+            Read multiple file objects (TLV objects after each other) 
+            </summary>
+            <param name="df">Directory File</param>
+            <param name="path">path under the directory file if the path is absolute then df can be null</param>
+            <returns>List of the data objects in the file</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.parseObjectList(System.Byte[])">
+            <summary>
+            Parses List of objects (ASN1)
+            </summary>
+            <param name="data">data to be parsed</param>
+            <returns>List of all ASN1 objects found</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15.readObjectListForApplication(smartcardLib.PKCS15.PKCS15ApplicationTemplate)">
+            <summary>
+            Read Object object in an Application template 
+            Make sure that the DDO is filled since it is Optional and not all card implmentation fills that field
+            you should fill it manually if this is the case
+            </summary>
+            <param name="at">Application template to be read</param>
+            <remarks>
+            The output of this call is on the logger [Default Logger]
+            </remarks>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15.cardController">
+            <summary>
+            Card Controller current used
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15.aidlist">
+            <summary>
+            AID list read from the DIR EF
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15AccessControlRule">
+            <summary>
+            AccessControlRule ::= SEQUENCE {
+            accessMode AccessMode,
+            securityCondition SecurityCondition,
+            … -- For future extensions
+            }
+            AccessMode::= BIT STRING
+            {
+            read (0),
+            update (1),
+            execute (2)
+            }
+            SecurityCondition::= CHOICE {
+            authId Identifier,
+            not[0] SecurityCondition,
+            and[1] SEQUENCE SIZE(2..pkcs15-ub-securityConditions) OF SecurityCondition,
+            or[2] SEQUENCE SIZE(2..pkcs15-ub-securityConditions) OF SecurityCondition,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15AccessControlRule.AccessMode">
+            <summary>
+            Access mode
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15AccessControlRule.AccessMode.read">
+            <summary>
+            Read Access
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15AccessControlRule.AccessMode.update">
+            <summary>
+            Update Access
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15AccessControlRule.AccessMode.execute">
+            <summary>
+            Execute Access
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15AccessControlRule.securityCondition">
+            <summary>
+            Security Condition
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15AccessControlRule.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 that holds the AccessControlRule</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15AccessControlRule.ToString">
+            <summary>
+            Converts to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15AccessControlRule.Identifier">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15ApplicationTemplate">
+            <summary>
+            application template
+            Data element, which may be present for example in a DIR file, and which contains one or more DOs relevant to
+            an application.
+            its an optional object that shall include PKCS15 DIRRecord and DDO object as follow
+            DIRRecord ::= [APPLICATION 1] SEQUENCE {
+            aid[APPLICATION 15] OCTET STRING,
+            label[APPLICATION 16] UTF8String OPTIONAL,
+            path[APPLICATION 17] OCTET STRING,
+            ddo[APPLICATION 19] DDO OPTIONAL
+            }
+            DDO ::= SEQUENCE {
+            oid OBJECT IDENTIFIER,
+            odfPath Path OPTIONAL,
+            tokenInfoPath[0] Path OPTIONAL,
+            unusedPath[1] Path OPTIONAL,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15ApplicationTemplate.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="tlv">ASN1 object that contains the PKCS15 application template</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15ApplicationTemplate.ToString">
+            <summary>
+            Converts to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15ApplicationTemplate.aid">
+            <summary>
+            The application identifier for this application.
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15ApplicationTemplate.ddo">
+            <summary>
+            The PKCS#15 Directory Data Object (DDO) for this application.
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15ApplicationTemplate.label">
+            <summary>
+            The application label for this application
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15ApplicationTemplate.objlist">
+            <summary>
+            The list of Cryptographic Information Objects (CIO).
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15ApplicationTemplate.path">
+            <summary>
+            The path for this application.
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15AuthenticationObject">
+            <summary>
+            AuthenticationType ::= CHOICE {
+            pin AuthenticationObject { PinAttributes },
+            ...,
+            biometricTemplate[0] AuthenticationObject { BiometricAttributes },
+            authKey[1] AuthenticationObject { AuthKeyAttributes },
+            external[2] AuthenticationObject { ExternalAuthObjectAttributes }
+            }
+            AuthenticationObject {AuthObjectAttributes} ::= PKCS15Object {
+            CommonAuthenticationObjectAttributes, NULL, AuthObjectAttributes}
+            </summary>
+            <remarks>
+            Only support for password authentication object
+            </remarks>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15AuthenticationObject.pwd">
+            <summary>
+            Password authentication object
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15AuthenticationObject.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor from 
+            </summary>
+            <param name="basetlv"></param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15AuthenticationObject.ToString">
+            <summary>
+            To Readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15Certificate">
+             <summary>
+             X509CertificateAttributes ::= SEQUENCE {
+            value ObjectValue { Certificate },
+             subject Name OPTIONAL,
+            issuer[0] Name OPTIONAL,
+            serialNumber CertificateSerialNumber OPTIONAL,
+            ... -- For future extensions
+            }
+             </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15Certificate.serialNumber">
+            <summary>
+            Serial number
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15Certificate.path">
+            <summary>
+            Path for the certificate
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15Certificate.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Can only read X509 Certificate currently
+            </summary>
+            <param name="tlv"></param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15Certificate.decodeX509Certificate(smartcardLib.Core.ASN1)">
+            <summary>
+            decodes a x509 certificate attributes
+            </summary>
+            <param name="tlv">ASN object to be decoded</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CIAInfo">
+            <summary>
+            The class decodes the following ASN.1 syntax
+            CIAInfo ::= SEQUENCE {
+            version INTEGER { v1(0),v2(1)} (v1|v2,...),
+            serialNumber OCTET STRING OPTIONAL,
+            manufacturerID Label OPTIONAL,
+            label[0] Label OPTIONAL,
+            cardflags CardFlags,
+            seInfo SEQUENCE OF SecurityEnvironmentInfo OPTIONAL,
+            recordInfo[1] RecordInfo OPTIONAL,
+            supportedAlgorithms[2] SEQUENCE OF AlgorithmInfo OPTIONAL,
+            issuerId[3] Label OPTIONAL,
+            holderId[4] Label OPTIONAL,
+            lastUpdate[5] LastUpdate OPTIONAL,
+            preferredLanguage PrintableString OPTIONAL, -- In accordance with IETF RFC 1766
+            profileIndication[6] SEQUENCE OF ProfileIndication OPTIONAL,
+            ...
+            } (CONSTRAINED BY { -- Each AlgorithmInfo.reference value shall be unique --})
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CIAInfo.READ_ONLY">
+            <summary>
+            Read only card flag
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CIAInfo.AUTHENTICATION_REQUIRED">
+            <summary>
+            Authentication required card flag
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CIAInfo.PRNG_GENERATION">
+            <summary>
+            Random number generation capable card flag
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.tlv">
+            <summary>
+            ASN1 object of the CIA Info
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.version">
+            <summary>
+            version
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.serialNumber">
+            <summary>
+            Serial number
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.manufacturerID">
+            <summary>
+            Manufacturer ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.label">
+            <summary>
+            label
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.cardflags">
+            <summary>
+            Card flags
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.seInfo">
+            <summary>
+            Secure Element Infromation
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.recordInfo">
+            <summary>
+            Record Information
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.supportedAlgorithms">
+            <summary>
+            List of supported algorithms
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.issuerId">
+            <summary>
+            issuer ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.holderId">
+            <summary>
+            Holder ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.lastUpdate">
+            <summary>
+            Last update
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.preferredLanguage">
+            <summary>
+            Preferred Language
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CIAInfo.profileIndication">
+            <summary>
+            Profile Indication
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CIAInfo.Logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CIAInfo.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor from ASN1
+            </summary>
+            <param name="tlv">ASN1 object containing the PKCS15 CIA</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CIAInfo.getCardflagsAsString">
+            <summary>
+            Get card flag as readable string
+            </summary>
+            <returns>card flag as string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CIAInfo.ToString">
+            <summary>
+            Converts the CIA to string
+            </summary>
+            <returns>a readable string of the PKCS15 CIA</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonObjectAttributes">
+            <summary>
+            The class decodes the following ASN.1 syntax:
+            CommonObjectAttributes ::= SEQUENCE {
+            label Label OPTIONAL,
+            flags CommonObjectFlags OPTIONAL,
+            authId Identifier OPTIONAL,
+            userConsent INTEGER(1..cia-ub-userConsent) OPTIONAL,
+            accessControlRules SEQUENCE SIZE(1..MAX) OF AccessControlRule OPTIONAL,
+            ...
+            } (CONSTRAINED BY {-- authId should be present if flags.private is set.
+            -- It shall equal an authID in one authentication object in the AOD -- })
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.PRIVATE">
+            <summary>
+            PRIVATE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.MODIFIABLE">
+            <summary>
+            Modifiable
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.INTERNAL">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.accessControlRules">
+            <summary>
+            List of access control rules
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.authId">
+            <summary>
+            Authentication object ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.flags">
+            <summary>
+            flags
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.userConsent">
+            <summary>
+            User consent
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            default constructor
+            </summary>
+            <param name="tlv">ASN1 object of PKCS15 CIO</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.getFlagsAsString">
+            <summary>
+            get CIO flags as readable
+            </summary>
+            <returns>readable flags</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonObjectAttributes.ToString">
+            <summary>
+            converts to string
+            </summary>
+            <returns>converts the CIO to a readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15DDO">
+            <summary>
+            Shall encode PKCS 15 DDO ASN1 object:
+            
+            DDO ::= SEQUENCE {
+                oid OBJECT IDENTIFIER,
+                odfPath Path OPTIONAL,
+                tokenInfoPath[0] Path OPTIONAL,
+                unusedPath[1] Path OPTIONAL,
+                ... -- For future extensions
+                }
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15DDO.providerId">
+            <summary>
+            Provider ID
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15DDO.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="tlv">ASN1 object that contains DDO</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15DDO.ToString">
+            <summary>
+            Converts the DDO object to a readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15DDO.ciaInfoPath">
+            <summary>
+            path to the CIA INFO
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15DDO.odfPath">
+            <summary>
+            Path to the PKCS15 ODF 
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes">
+            <summary>
+            CommonAuthenticationObjectAttributes ::= SEQUENCE {
+             authId Identifier,
+             authReference Reference OPTIONAL,
+             seIdentifier[0] Reference OPTIONAL,
+              ... –- For future extensions
+             }
+             </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.authIdThis">
+            <summary>
+            Authentication ID of CommonAuthenticationObjectAttributes
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.authReference">
+            <summary>
+            Authentication reference
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.seIdentifier">
+            <summary>
+            Secure Element Identifier
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor from ASN object
+            </summary>
+            <param name="tlv">ASN object</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.getFlagsAsString">
+            <summary>
+            return the common authentication object attributes flags as friendly string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonAuthenticationObjectAttributes.ToString">
+            <summary>
+            converts to a readable string
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes">
+            <summary>
+            The class decodes the following ASN.1 syntax:
+            CommonCertificateAttributes ::= SEQUENCE {
+            iD Identifier,
+            authority BOOLEAN DEFAULT FALSE,
+            identifier CredentialIdentifier {{ KeyIdentifiers} OPTIONAL,
+            certHash[0] CertHash OPTIONAL,
+            trustedUsage[1] Usage OPTIONAL,
+            identifiers[2] SEQUENCE OF CredentialIdentifier {{ KeyIdentifiers} }
+            OPTIONAL,
+            validity[4] Validity OPTIONAL,
+            ...
+            } -- Context tag[3] is reserved for historical reasons
+            NOTE PKCS #15 uses context tag [3].
+            Usage::= SEQUENCE {
+            keyUsage KeyUsage OPTIONAL,
+            extKeyUsage SEQUENCE SIZE(1..MAX) OF OBJECT IDENTIFIER OPTIONAL,
+            ...
+            } (WITH COMPONENTS {..., keyUsage PRESENT } | WITH COMPONENTS {..., extKeyUsage PRESENT }) 
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 object that contains the CommonCertificateAttributes</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes.ToString">
+            <summary>
+            converts to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes.authority">
+            <summary>
+            Authority
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes.iD">
+            <summary>
+            ID 
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonCertificateAttributes.identifier">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes">
+            <summary>
+            CommonDataObjectAttributes ::= SEQUENCE {
+            applicationName Label OPTIONAL,
+            applicationOID OBJECT IDENTIFIER OPTIONAL,
+            ... -- For future extensions
+            } (WITH COMPONENTS {..., applicationName PRESENT }|
+            WITH COMPONENTS {..., applicationOID PRESENT })
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes.applicationName">
+            <summary>
+            Application Name
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes.applicationOID">
+            <summary>
+            Optional Application OID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes.iD">
+            <summary>
+            iD
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="basetlv">ASN containing the element</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonDataContainerObjectAttributes.ToString">
+            <summary>
+            To readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonKeyAttributes">
+            <summary>
+            CommonKeyAttributes ::= SEQUENCE {
+            iD Identifier,
+            usage KeyUsageFlags,
+            native BOOLEAN DEFAULT TRUE,
+            accessFlags KeyAccessFlags OPTIONAL,
+            keyReference Reference OPTIONAL,
+            startDate GeneralizedTime OPTIONAL,
+            endDate[0] GeneralizedTime OPTIONAL,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.ENCIPHER">
+            <summary>
+            Encipher
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.DECIPHER">
+            <summary>
+            Decipher
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.SIGN">
+            <summary>
+            SIGN
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.SIGN_RECOVER">
+            <summary>
+            SIGN Recover
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.KEY_ENCIPHER">
+            <summary>
+            Key Encipher
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.KEY_DECIPHER">
+            <summary>
+            Key decipher
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.VERIFY">
+            <summary>
+            Verify
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.VERIFY_RECOVER">
+            <summary>
+            Verify recover
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.DERIVE">
+            <summary>
+            Derive key
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.NON_REPUDIATION">
+            <summary>
+            Non repudiation
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.SENSITIVE">
+            <summary>
+            Sensitive key
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.EXTRACTABLE">
+            <summary>
+            Extractable key
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.ALWAYS_SENSITIVE">
+            <summary>
+            Always sensitive
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.NEVER_EXTRACTABLE">
+            <summary>
+            Never extractable
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.CARD_GENERATED">
+            <summary>
+            Card generated
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="tlv">ASN1 that holds a common key attributes</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.getAccessFlagsAsString">
+            <summary>
+            convert access flag to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.getUsageAsString">
+            <summary>
+            convert usage to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.ToString">
+            <summary>
+            converts the PKCS15CommonKeyAttributes attributes to readable format
+            </summary>
+            <returns>readable format</returns>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.accessFlags">
+            <summary>
+            Access flags
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.algReference">
+            <summary>
+            Algorithm reference
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.endDate">
+            <summary>
+            End Date
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.iD">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.keyReference">
+            <summary>
+            Key reference
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.native_">
+            <summary>
+            Is Native (default true)
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.startDate">
+            <summary>
+            Start date
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15CommonKeyAttributes.usage">
+            <summary>
+            Usage
+            </summary>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonPrivateKeyAttributes">
+            <summary>
+            CommonPrivateKeyAttributes ::= SEQUENCE {
+            subjectName Name OPTIONAL,
+            keyIdentifiers[0] SEQUENCE OF CredentialIdentifier {{ KeyIdentifiers} }
+            OPTIONAL,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonPrivateKeyAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="tlv">ASN1 contains a common private key attributes</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15CommonPublicKeyAttributes">
+            <summary>
+            CommonPublicKeyAttributes ::= SEQUENCE {
+            subjectName Name OPTIONAL,
+            ...,
+            trustedUsage[0] Usage OPTIONAL
+            }
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15CommonPublicKeyAttributes.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="basetlv">ASN with common public key object</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15DataContainerObject">
+             <summary>
+             This class adds data container objects to the common data container object attributes class.
+             The class decodes the following ASN.1 syntax for opaque data objects with indirect path reference:
+             OpaqueDOAttributes::= ObjectValue {CIO-OPAQUE.&amp;Type
+             }
+             ObjectValue { Type } ::= CHOICE {
+                     indirect ReferencedValue,
+                     direct[0] Type,
+                     ... -- For future extensions
+             }
+             ReferencedValue::= CHOICE {
+                 path Path,
+                 url URL
+            } -- The syntax of the object is determined by the context
+             </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15DataContainerObject.indirectPath">
+            <summary>
+            Indirect Path
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15DataContainerObject.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 object that contains data container</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15DataContainerObject.ToString">
+            <summary>
+            To readable string
+            </summary>
+            <returns>Readable string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15DataContainerObject.decodeOpaqueDOIndirectPath(smartcardLib.Core.ASN1)">
+            <summary>
+            Decode the Opage DOI indirect Path
+            </summary>
+            <param name="Obj">ASN1 object that contains Indirect path</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject">
+            <summary>
+            This class supports password authentication objects.
+            The class decodes the following ASN.1 syntax:
+            PasswordAttributes::= SEQUENCE {
+            pwdFlags PasswordFlags,
+            pwdType PasswordType,
+            minLength INTEGER(cia-lb-minPasswordLength..cia-ub-minPasswordLength),
+            storedLength INTEGER(0..cia-ub-storedPasswordLength),
+            maxLength INTEGER OPTIONAL,
+            pwdReference[0] Reference DEFAULT 0,
+            padChar OCTET STRING(SIZE(1)) OPTIONAL,
+            lastPasswordChange GeneralizedTime OPTIONAL,
+            path Path OPTIONAL,
+            ...
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="tlv">ASN1 data object</param>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.pwdFlags">
+            <summary>
+            Password Flags
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.pwdType">
+            <summary>
+            Password Type
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.minLength">
+            <summary>
+            Minimum  length
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.storedLength">
+            <summary>
+            Stored Length
+            </summary>
+            <remarks>Optional null if not available</remarks>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.maxLength">
+            <summary>
+            maximum Length
+            </summary>
+            <remarks>Optional null if not available</remarks>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.pwdReference">
+            <summary>
+            Password Reference
+            </summary>
+            <remarks>Optional null if not available</remarks>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.padding">
+            <summary>
+            Stored Length
+            </summary>
+            <remarks>Optional null if not available</remarks>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.getPwdFlagsAsString">
+            <summary>
+            Converts password flags to readable string
+            </summary>
+            <returns>result</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.getPwdTypeAsString">
+            <summary>
+            convert password type to readable string
+            </summary>
+            <returns>password type as string</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PasswordAuthenticationObject.ToString">
+            <summary>
+            convert password object details to string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15Path">
+             <summary>
+             The class decodes the following ASN.1 syntax:
+             Path::= SEQUENCE {
+            efidOrPath OCTET STRING,
+            index INTEGER(0..cia-ub-index) OPTIONAL,
+            length[0] INTEGER(0..cia-ub-index) OPTIONAL
+              }( WITH COMPONENTS {..., index PRESENT, length PRESENT }|
+               WITH COMPONENTS {..., index ABSENT, length ABSENT })
+             </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15Path.aid">
+            <summary>
+            AID of path
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15Path.efidOrPath">
+            <summary>
+            EF or Path
+            </summary>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15Path.index">
+            <summary>
+            index ie offset
+            </summary>
+            <remarks>Optional will be null if not available</remarks>
+        </member>
+        <member name="F:smartcardLib.PKCS15.PKCS15Path.length">
+            <summary>
+            length of the data object
+            </summary>
+            <remarks>Optional will be null if not available</remarks>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15Path.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructs a PKCS15 Path
+            </summary>
+            <param name="tlv">Tag Length Value structure of PKCS15 Path object</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15Path.ToString">
+            <summary>
+            overrides the to string object to provide a readable information of that instance
+            </summary>
+            <returns>Readable information of that instance</returns>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15Path.getAbsolutePath(System.String)">
+            <summary>
+            Returns the absolute path without the MF file
+            if there is an aid for the application it shall return aid# and then the path
+            the path DF are separated by semicolons 
+            </summary>
+            <param name="df">If you have a df you want to pad to the path you should put it it here</param>
+            <returns>If the path is absolute it will return the full path otherwise it will return the padded path with the df input</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15PrivateKey">
+            <summary>
+            This class adds private key attributes to the common private key attribute class
+            The class supports RSA and ECC keys.
+            RSA keys are decoded from the following ASN.1 structure:
+            PrivateRSAKeyAttributes::= SEQUENCE {
+            value Path,
+            modulusLength INTEGER, --modulus length in bits, e.g.
+            }
+            
+            PrivateECKeyAttributes ::= SEQUENCE {
+            value ObjectValue { ECPrivateKey },
+            keyInfo KeyInfo { Parameters, PublicKeyOperations }
+            OPTIONAL,
+            ... -- For future extensions
+            }
+            ECPrivateKey::= INTEGER
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PrivateKey.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 hold Private Key</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PrivateKey.decodePrivateECCKey(smartcardLib.Core.ASN1)">
+            <summary>
+            Decode ECC private key
+            </summary>
+            <param name="basetlv">ASN1 object holding the Elliptic Curve Cryptography private key</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PrivateKey.decodePrivateRSAKey(smartcardLib.Core.ASN1)">
+            <summary>
+            Decode RSA private key
+            </summary>
+            <param name="basetlv">ASN1 object holfing the RSA private key</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PrivateKey.ToString">
+            <summary>
+            converts the private key parameters to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15PublicKey">
+            <summary>
+            PublicKeyType ::= CHOICE {
+                publicRSAKey PublicKeyObject { PublicRSAKeyAttributes },
+                publicECKey[0] PublicKeyObject { PublicECKeyAttributes },
+                publicDHKey[1] PublicKeyObject { PublicDHKeyAttributes },
+                publicDSAKey[2] PublicKeyObject { PublicDSAKeyAttributes },
+                publicKEAKey[3] PublicKeyObject { PublicKEAKeyAttributes },
+                … -- For future extensions
+                }
+            PublicKeyObject {KeyAttributes} ::= PKCS15Object {
+            CommonKeyAttributes, CommonPublicKeyAttributes, KeyAttributes}
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PublicKey.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            constructor
+            </summary>
+            <param name="basetlv">ASN1 that holds the public key</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PublicKey.decodePublicECCKey(smartcardLib.Core.ASN1)">
+            <summary>
+            Decode the ECC public Key
+            </summary>
+            <param name="tlv">ASN1 of PublicECKeyAttributes</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15PublicKey.decodePublicRSAKey(smartcardLib.Core.ASN1)">
+            <summary>
+            decode the RSA public
+            </summary>
+            <param name="tlv">ASN1 of PublicRSAKeyAttributes</param>
+        </member>
+        <member name="T:smartcardLib.PKCS15.PKCS15SecurityCondition">
+            <summary>
+            
+            SecurityCondition::= CHOICE {
+            authId Identifier,
+            not[0] SecurityCondition,
+            and[1] SEQUENCE SIZE(2..pkcs15-ub-securityConditions) OF SecurityCondition,
+            or[2] SEQUENCE SIZE(2..pkcs15-ub-securityConditions) OF SecurityCondition,
+            ... -- For future extensions
+            }
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15SecurityCondition.Identifier">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15SecurityCondition.AND">
+            <summary>
+            List of AND conditions
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15SecurityCondition.OR">
+            <summary>
+            List of OR conditions
+            </summary>
+        </member>
+        <member name="P:smartcardLib.PKCS15.PKCS15SecurityCondition.NOT">
+            <summary>
+            NOT condition
+            </summary>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15SecurityCondition.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="tlv">ASN1 that holds the security conditions</param>
+        </member>
+        <member name="M:smartcardLib.PKCS15.PKCS15SecurityCondition.ToString">
+            <summary>
+            Converts to readable string
+            </summary>
+            <returns>readable string</returns>
+        </member>
+        <member name="T:smartcardLib.Core.ISO7618Padding">
+            <summary>
+            ISO7816 Padding (EMV) Padding
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ISO7618Padding.EMV">
+            <summary>
+            EMV padding 
+            </summary>
+        </member>
+        <member name="T:smartcardLib.Core.ASN1">
+            <summary>
+            ASN1 class
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.BOOLEAN">
+            <summary>
+            Boolean
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.INTEGER">
+            <summary>
+            Integer
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.BIT_STRING">
+            <summary>
+            BIT STRING
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.OCTET_STRING">
+            <summary>
+            OCTET STRING
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NULL">
+            <summary>
+            NULL
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.OBJECT_IDENTIFIER">
+            <summary>
+            Object identifier
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.Object_Descriptor">
+            <summary>
+            Objecy descriptor
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.EXTERNAL">
+            <summary>
+            External
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.REAL">
+            <summary>
+            Real
+            </summary>
+            <remarks> Not implmented</remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.ENUMERATED">
+            <summary>
+            Enumerated
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.EMBEDDED_PDV">
+            <summary>
+            Embedded PDV
+            </summary>
+            <remarks>Not Implemented </remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.UTF8String">
+            <summary>
+            UTF8 string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.RELATIVE_OID">
+            <summary>
+            Relative OID
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.SEQUENCE">
+            <summary>
+            SEQUENCE [and constructive]
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.SET">
+            <summary>
+            SET [and constructive]
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NumericString">
+            <summary>
+            Numeric String
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.PrintableString">
+            <summary>
+            Printable string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.T61String">
+            <summary>
+            T61 string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.VideotexString">
+            <summary>
+            VideoTex string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.IA5String">
+            <summary>
+            IA5 String
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.UTCTime">
+            <summary>
+            UTC time
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.GeneralizedTime">
+            <summary>
+            Generalized Time
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.GraphicString">
+            <summary>
+            Graphic string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.VisibleString">
+            <summary>
+            Visible string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.GeneralString">
+            <summary>
+            General string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.UniversalString">
+            <summary>
+            Universal string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.CHARACTER_STRING">
+            <summary>
+            Character string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.BMPString">
+            <summary>
+            BMP string
+            </summary>
+        </member>
+        <member name="T:smartcardLib.Core.ASN1.NAME">
+            <summary>
+            Universal Object names and associated Tag values
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.BOOLEAN">
+            <summary>
+            Boolean
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.INTEGER">
+            <summary>
+            Integer
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.BITSTRING">
+            <summary>
+            BIT STRING
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.OCTETSTRING">
+            <summary>
+            OCTET STRING
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.NULL">
+            <summary>
+            NULL
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.OBJECTIDENTIFIER">
+            <summary>
+            Object Identifier
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.ObjectDescriptor">
+            <summary>
+            Object descriptor
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.ENUMERATED">
+            <summary>
+            Enumerated
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.REAL">
+            <summary>
+            REAL
+            </summary>
+            <remarks> REAL is not implmented</remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.EMBEDDED_PDV">
+            <summary>
+            Embdded PDV
+            </summary>
+            <remarks> NOT implmented Type</remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.UTF8String">
+            <summary>
+            UTF8 string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.SEQUENCE">
+            <summary>
+            SEQUENCE
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.SET">
+            <summary>
+            SET
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.NumericString">
+            <summary>
+            Numeric string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.PrintableString">
+            <summary>
+            Printable string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.TeletexString">
+            <summary>
+            Teletext String
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.VideotexString">
+            <summary>
+            Video Text string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.IA5String">
+            <summary>
+            IA5 string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.UTCTime">
+            <summary>
+            UTC time
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.GeneralizedTime">
+            <summary>
+            Generalized Time
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.GraphicString">
+            <summary>
+            Graphic String
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.VisibleString">
+            <summary>
+            Visible String
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.GeneralString">
+            <summary>
+            General string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.UniversalString">
+            <summary>
+            Universal string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.CHARACTER_STRING">
+            <summary>
+            Character string
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.NAME.BMPString">
+            <summary>
+            BMP string
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.#ctor(System.Byte,System.Byte[])">
+            <summary>
+            Constructor that uses TAG and data (value) the length will be appended
+            </summary>
+            <param name="TAG">Tag</param>
+            <param name="Data">Value as byte array</param>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.#ctor(System.Byte[])">
+            <summary>
+            Constructor that assume an ASN1 object from the byte array
+            </summary>
+            <param name="Data">byte array that includes a full ASN1 object</param>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.Parse(System.Byte[],System.Int32)">
+            <summary>
+            Parses an ASN1 object
+            </summary>
+            <param name="Data">byte array to be parsed</param>
+            <param name="offset">offset to which the parse begins</param>
+            <remarks>
+            ASN1 with Tag length more than 1 byte not supported
+            value is not populated unless it is used
+            </remarks>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            A constructor that assume that there is an ASN1 instance in a byte array at specific offset
+            </summary>
+            <param name="Data">byte array</param>
+            <param name="offset">offset</param>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.IsAsn1String">
+            <summary>
+            Is the current ASN1 a string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.IsUniversalString">
+            <summary>
+            Is universal string
+            </summary>
+            <returns>true if universal string</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.#ctor(System.Byte,System.Byte[],smartcardLib.Core.ISO7618Padding)">
+            <summary>
+            Constructor that uses TAG and data and required the data to be padded
+            </summary>
+            <param name="TAG">TAG</param>
+            <param name="Data">value of data</param>
+            <param name="Padding">Padding technique</param>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.setName(System.String)">
+            <summary>
+            Sets the name of the ASN1 object
+            </summary>
+            <param name="v">string name</param>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.get(System.Int32)">
+            <summary>
+            Get a children in the ASN tree
+            </summary>
+            <param name="v">child number</param>
+            <returns>ASN1 child object</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.Tag">
+            <summary>
+            Tag value
+            </summary>
+            <remarks> Only one byte tag is supported in this ASN1</remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.Name">
+            <summary>
+            Name of the ASN1 object can be set to anything
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.length">
+            <summary>
+            Length of the ASN1 value data
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1._data">
+            <summary>
+            value data
+            </summary>
+            <remarks>Only populated when accessing the value</remarks>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1._offset">
+            <summary>
+            offset in the byte array that holds the object
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.Children">
+            <summary>
+            List of all children ASN1
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.IsConstructed">
+            <summary>
+            true if the ASN1 object is constructed
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.GetLength(System.Byte[],System.Int32,System.Int32@)">
+            <summary>
+            This function will get the length of value according to TLV standard
+            </summary>
+            <param name="Data">Byte array</param>
+            <param name="Offset">Offset to which the length is stored</param>
+            <param name="SizeOfLength">out the length of the length field in the ASN1 object</param>
+            <returns>integer value of the length</returns>
+            <remarks>ASN1 object with null termination i.e. length is set to 0x80 is not supported yet</remarks>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.PaddWithEMV(System.Byte[])">
+            <summary>
+            This is a helped function used internally to pad data with EMV standard padding
+            </summary>
+            <param name="data">data</param>
+            <returns>data padded with EMV standard similar to RSA 1.5 padding</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.GetLengthArray(System.Int32)">
+            <summary>
+            Get Length as byte array
+            </summary>
+            <param name="length">returns the length of the ASN1 instance as byte array</param>
+            <returns>byte array of the length</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ToString">
+            <summary>
+            Converts the ASN1 object to readable string
+            </summary>
+            <returns>Readable string</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ToStringAndConvert">
+            <summary>
+            Convert the ASN1 object to string and tries also
+            to convert the children of the object if universal to a string representation
+            </summary>
+            <returns>String representation of the ASN1 object and its children</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.TryGetValue``1(``0@)">
+            <summary>
+            Tries to convert the Value object to a specific type
+            </summary>
+            <typeparam name="T">Type to convert to</typeparam>
+            <param name="value">output of conversion</param>
+            <returns>if succeeded will return true otherwise will return false</returns>
+            <remarks>in case of false the value will be populated with the default value for value objects</remarks>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.TryGetValue(System.Object@,System.Type@)">
+            <summary>
+            Tries to convert the Value object according to the Tag value and returns the output as (object) that is default type of the appropriate 
+            encoded value
+            </summary>
+            <param name="val">encoded value decoded to a specific default object type</param>
+            <param name="type">the type of the decoded val</param>
+            <returns>true in case of success otherwise error</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ConvertValueToInt">
+            <summary>
+            Converts the value to integer
+            </summary>
+            <returns>integer value of the </returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ConvertValueToLong">
+            <summary>
+            Converts the value to long
+            </summary>
+            <returns>long value of the object </returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ConvertBitStringValueToString">
+            <summary>
+            converts a bit string to binary string array
+            </summary>
+            <returns>converts a bit string to binary string array</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.ConvertValueToEnumerated">
+            <summary>
+            Coverts the value to enumeration and returns the enumeration integer value
+            </summary>
+            <returns>enumeration integer value</returns>
+        </member>
+        <member name="M:smartcardLib.Core.ASN1.GetValue``1">
+            <summary>
+            Gets the value according to the required type if possible
+            </summary>
+            <typeparam name="T">Type for the output data</typeparam>
+            <returns>Data converted to the type if possible</returns>
+            <exception cref="T:System.InvalidCastException">will throw invalid cast if couldn't convert to specified type</exception>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.Value">
+            <summary>
+            returns the value and sets the _value to a new byte array of the value
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.TotalLength">
+            <summary>
+            Total length of the ASN1 object [Tag, Length and value]
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1._value">
+            <summary>
+            this will hold the a pointer to the value when ever value is called
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Core.ASN1.TagClass">
+            <summary>
+            Tag class
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.elements">
+            <summary>
+            children count
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.IsContext">
+            <summary>
+            Is context ASN1 object
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.Primtag">
+            <summary>
+            Primary tag
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.tagName">
+            <summary>
+            Tag Name
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Core.ASN1.TagNumber">
+            <summary>
+            Tag Number
+            </summary>
+        </member>
+        <member name="T:smartcardLib.Core.Helpers">
+            <summary>
+            Helpers static class which include all helpers 
+            </summary>
+            <remarks>make different helpers for different objects</remarks>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.RemoveTrailZeros(System.Byte[])">
+            <summary>
+            Removes trail zeros from a byte array
+            </summary>
+            <param name="bt">the byte array</param>
+            <returns>a new byte array with zero trails removed</returns>
+            <remarks>Array doesn't change the output of this array is to be used</remarks>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.Oid(System.String)">
+            <summary>
+            Coverts an OID string to equivalent byte array (trims spaces)
+            </summary>
+            <param name="oid">string as OID</param>
+            <returns>OID as byte array</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.FormatException"></exception>
+            <exception cref="T:System.OverflowException"></exception>
+            <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException"></exception>
+            <remarks>It might be a good idea to add the RegEx </remarks>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToUnsigned(System.Byte[])">
+            <summary>
+            Convert an ASN INTEGER to unsigned int
+            </summary>
+            <param name="iBytes">VALUE of ASN INTEGER</param>
+            <returns>unsigned value</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToSigned(System.Byte[])">
+            <summary>
+            Convert an ASN INTEGER to signed int
+            </summary>
+            <param name="iBytes">VALUE of ASN INTEGER as byte array</param>
+            <returns>signed value</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.IntFromBitString(System.Byte[])">
+            <summary>
+            Converts BIT STRING to int
+            </summary>
+            <param name="bitString">BIT STRING as byte array</param>
+            <returns>integer value of INT STRING</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.OidString(System.Byte[])">
+            <summary>
+            converts a byte array to Oid String
+            </summary>
+            <param name="oid">byte array of OID</param>
+            <returns>OID string</returns>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.Append(System.Byte[],System.Byte[])">
+            <summary>
+            Appends byte arrays the array
+            </summary>
+            <param name="Dest">byte Array</param>
+            <param name="Source">byte array</param>
+            <returns></returns>
+            <remarks>
+            (WARNING) the array itself is not changes the returned value is the appended array
+            </remarks>
+            <exception cref="T:System.OverflowException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.HexLength(System.String,System.Int32)">
+            <summary>
+            Get the hex length of a string it is useful if the string is a hex array and you want to calculated the 
+            array length 
+            </summary>
+            <param name="str">Hex string</param>
+            <param name="RequestedLength">the size of the output as string i.e. if you have a 4 characters array and you state that the output should be 4 then you will get 0002</param>
+            <returns>returns the hex array length as string</returns>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToBinary(System.Byte[])">
+            <summary>
+            Converts a byte array to binary of base 2 
+            </summary>
+            <param name="arr">byte array</param>
+            <returns>base 2 binary string</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToHex(System.Byte[])">
+            <summary>
+            Converts a byte array to hex string
+            </summary>
+            <param name="arr">byte array</param>
+            <returns>hex string</returns>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToHex(System.Byte[],System.Int32)">
+            <summary>
+            Converts a specific amount from a byte array to hex if the Count is bigger than the length of the array the whole array will be converted and count is ignored
+            </summary>
+            <param name="ba">byte array</param>
+            <param name="count">how many bytes from the array to convert</param>
+            <returns>Hex string</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.FormatException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.GetHexVal(System.Char)">
+            <summary>
+            Get the hex value of a character as integer
+            </summary>
+            <param name="hex">hex character</param>
+            <returns>integer value</returns>
+        </member>
+        <member name="M:smartcardLib.Core.Helpers.ToBytes(System.String)">
+            <summary>
+            Converts the hex string to byte array
+            </summary>
+            <param name="hex">hex string</param>
+            <returns>byte array of represented string</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:smartcardLib.Card.CardControllerEmulatorAsDirectory">
+            <summary>
+            Card emulator controller as folde under c:\\VirtualCards\\ {AID}
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.CardControllerEmulatorAsDirectory.SelectAID(System.String)">
+            <summary>
+            Selects AID as directory under C:\VirtualCards
+            </summary>
+            <param name="aid">Directory Name</param>
+            <returns>true if succeeded otherwise false</returns>
+        </member>
+        <member name="T:smartcardLib.Card.MockedCardFile">
+            <summary>
+            Mocked card as file system card
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.#ctor(smartcardLib.Card.ICardController,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="cardController">Card controller</param>
+            <param name="filePath">path to file location</param>
+        </member>
+        <member name="P:smartcardLib.Card.MockedCardFile.Length">
+            <summary>
+            Length of file
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.IsTransparent">
+            <summary>
+            always transparent
+            </summary>
+            <returns>true</returns>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.ReadBinary">
+            <summary>
+            Read all data in file
+            </summary>
+            <returns>File data</returns>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.ReadBinary(System.UInt32)">
+            <summary>
+            Read a specific length from the EF
+            </summary>
+            <param name="length">size of data to be read</param>
+            <returns>data read</returns>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.ReadRecord(System.Int32)">
+            <summary>
+            Read a record for non transparent file
+            </summary>
+            <param name="length">length to be read</param>
+            <returns>data read</returns>
+        </member>
+        <member name="M:smartcardLib.Card.MockedCardFile.ReadBinary(System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Read from a specific offset with a specific length
+            </summary>
+            <param name="offset">offset to read from</param>
+            <param name="length">length to be read from that offset</param>
+            <returns>data returned</returns>
+            <remarks>
+            if offset is null  it is assumed to be 0
+            if length is null the full file length will be read
+            </remarks>
+        </member>
+        <member name="T:smartcardLib.Card.ICardController">
+            <summary>
+            Card controller interface
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.ICardController.SelectAID(System.String)">
+            <summary>
+            Select Application Identifier
+            </summary>
+            <param name="aid">Application Identifier</param>
+            <returns>value</returns>
+        </member>
+        <member name="T:smartcardLib.Card.ICardFile">
+            <summary>
+            Interface for card file
+            </summary>
+        </member>
+        <member name="P:smartcardLib.Card.ICardFile.Length">
+            <summary>
+            Length of EF file if EF
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.ICardFile.IsTransparent">
+            <summary>
+            Is transparent EF
+            </summary>
+            <returns>true if transparent EF false otherwise</returns>
+        </member>
+        <member name="M:smartcardLib.Card.ICardFile.ReadBinary">
+            <summary>
+            Read the full EF
+            </summary>
+            <returns>data in EF </returns>
+        </member>
+        <member name="M:smartcardLib.Card.ICardFile.ReadBinary(System.UInt32)">
+            <summary>
+            Read a specific length from the EF
+            </summary>
+            <param name="length">size of data to be read</param>
+            <returns>data read</returns>
+        </member>
+        <member name="M:smartcardLib.Card.ICardFile.ReadBinary(System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Read from a specific offset with a specific length
+            </summary>
+            <param name="offset">offset to read from</param>
+            <param name="length">length to be read from that offset</param>
+            <returns>data returned</returns>
+            <remarks>
+            if offset is null  it is assumed to be 0
+            if length is null the full file length will be read
+            </remarks>
+        </member>
+        <member name="M:smartcardLib.Card.ICardFile.ReadRecord(System.Int32)">
+            <summary>
+            Read a record for non transparent file
+            </summary>
+            <param name="length">length to be read</param>
+            <returns>data read</returns>
+        </member>
+        <member name="T:smartcardLib.Card.SmartCardException">
+            <summary>
+            smartcard exception
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.SmartCardException.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Card.SmartCardException.#ctor(System.String)">
+            <summary>
+            constructor with a message
+            </summary>
+            <param name="message">message</param>
+        </member>
+        <member name="M:smartcardLib.Card.SmartCardException.#ctor(System.String,System.Exception)">
+            <summary>
+            constructor with a message and inner exception
+            </summary>
+            <param name="message">message</param>
+            <param name="innerException">inner exception</param>
+        </member>
+        <member name="M:smartcardLib.Card.SmartCardException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            De-serialize constructor
+            </summary>
+            <param name="info">serialization info</param>
+            <param name="context">context streaming</param>
+        </member>
+        <member name="T:smartcardLib.Logging.ErrorLevel">
+            <summary>
+            Error levels available
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Trace">
+            <summary>
+            Trace logging
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Debug">
+            <summary>
+            Debug logging
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Information">
+            <summary>
+            Information logging
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Warning">
+            <summary>
+            Warning logging
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Error">
+            <summary>
+            Error logging
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.ErrorLevel.Critical">
+            <summary>
+            Critical Logging
+            </summary>
+        </member>
+        <member name="T:smartcardLib.Logging.ILogger">
+            <summary>
+            Logger Interface
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogDebug(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log debug 
+            </summary>
+            <param name="ErrorCode">a number that identify a debug information</param>
+            <param name="Error">debug information</param>
+            <param name="ex">if it is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogDebug(System.Int32,System.String)">
+            <summary>
+            Log debug 
+            </summary>
+            <param name="ErrorCode">a number that identify a debug information</param>
+            <param name="Error">debug information</param>        
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogDebug(System.String)">
+            <summary>
+            Log debug 
+            </summary>        
+            <param name="Error">debug information</param>        
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogWarning(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log warning 
+            </summary>
+            <param name="ErrorCode">a number that identify the warning</param>
+            <param name="Error">warning information</param>
+            <param name="ex">if warning is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogWarning(System.Int32,System.String)">
+            <summary>
+            Log warning 
+            </summary>
+            <param name="ErrorCode">a number that identify the warning</param>
+            <param name="Error">warning details</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogWarning(System.String)">
+            <summary>
+            Log warning
+            </summary>
+            <param name="Error">warning information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogError(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log error 
+            </summary>
+            <param name="ErrorCode">a number that identify a error information</param>
+            <param name="Error">error information</param>
+            <param name="ex">if it is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogError(System.Int32,System.String)">
+            <summary>
+            Log error 
+            </summary>        
+            <param name="ErrorCode">a number that identify a error information</param>
+            <param name="Error">error information</param>        
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogError(System.String)">
+            <summary>
+            Log error 
+            </summary>
+            <param name="Error">error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogCritical(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log critical error
+            </summary>
+            <param name="ErrorCode">a number that identify the critical error</param>
+            <param name="Error">critical error information</param>
+            <param name="ex">if error is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogCritical(System.Int32,System.String)">
+            <summary>
+            Log critical error
+            </summary>
+            <param name="ErrorCode">a number that identify the critical error</param>
+            <param name="Error">critical error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogCritical(System.String)">
+            <summary>
+            Log critical error
+            </summary>
+            <param name="Error">critical error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogTrace(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="ErrorCode">a number that identify the trace information</param>
+            <param name="Error">trace information</param>
+            <param name="ex">if the trace is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogTrace(System.Int32,System.String)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="ErrorCode">a number that identify the trace information</param>
+            <param name="Error">trace information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogTrace(System.String)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="Error">trace information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogInformation(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log information
+            </summary>
+            <param name="ErrorCode">a number that identify the information details</param>
+            <param name="Error">Information details</param>
+            <param name="ex">if the information is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogInformation(System.Int32,System.String)">
+            <summary>
+            Log information
+            </summary>
+            <param name="ErrorCode">a number that identify the information details</param>
+            <param name="Error">Information details</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ILogger.LogInformation(System.String)">
+            <summary>
+            Log information
+            </summary>       
+            <param name="Error">Information details</param>
+        </member>
+        <member name="P:smartcardLib.Logging.ILogger.CurrentErrorLevel">
+            <summary>
+            returns the current log level configured
+            </summary>
+        </member>
+        <member name="T:smartcardLib.Logging.LoggerFac">
+            <summary>
+            Logger Factory
+            </summary>
+        </member>
+        <member name="F:smartcardLib.Logging.LoggerFac.Loggers">
+            <summary>
+            A dictionary with all the available loggers
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.LoggerFac.AddLogger(System.Type,smartcardLib.Logging.ILogger)">
+            <summary>
+            static function to add loggers to the dictionary
+            </summary>
+            <param name="t">Type of the logger</param>
+            <param name="Value">instance of the logger</param>
+            <returns>true if added successfully </returns>
+            <remarks> There can't be two instance of loggers with the same type</remarks>
+        </member>
+        <member name="M:smartcardLib.Logging.LoggerFac.GetLogger``1">
+            <summary>
+            Get a specific logger depending on the type
+            </summary>
+            <typeparam name="T">The type of the logger to retrieve</typeparam>
+            <returns>Logger as a type it must implements the <see cref="T:smartcardLib.Logging.ILogger"/> of no logger of that type is added to the factory the output will be null   </returns>
+        </member>
+        <member name="M:smartcardLib.Logging.LoggerFac.GetDefaultLogger">
+            <summary>
+            Gets the default logger currently the default logger is  <see cref="T:smartcardLib.Logging.ConsoleLogger"/>
+            </summary>
+            <returns>Default logger <see cref="T:smartcardLib.Logging.ConsoleLogger"/></returns>
+        </member>
+        <member name="T:smartcardLib.Logging.ConsoleLogger">
+            <summary>
+            Logs to console
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.Clear">
+            <summary>
+            Clears the text
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.Log(System.String,smartcardLib.Logging.ErrorLevel,System.Int32,System.Exception)">
+            <summary>
+            Logs string
+            </summary>
+            <param name="str">String to log</param>
+            <param name="level">logging level</param>
+            <param name="Code">Logging code</param>
+            <param name="ex">Exception if any</param>
+        </member>
+        <member name="P:smartcardLib.Logging.ConsoleLogger.CurrentErrorLevel">
+            <summary>
+            Current logging level
+            </summary>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogCritical(System.String)">
+            <summary>
+            Log critical error
+            </summary>
+            <param name="Error">critical error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogCritical(System.Int32,System.String)">
+            <summary>
+            Log critical error
+            </summary>
+            <param name="ErrorCode">a number that identify the critical error</param>
+            <param name="Error">critical error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogCritical(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="ErrorCode">a number that identify the trace information</param>
+            <param name="Error">trace information</param>
+            <param name="ex">if the trace is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogDebug(System.String)">
+            <summary>
+            Log debug 
+            </summary>        
+            <param name="Error">debug information</param>     
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogDebug(System.Int32,System.String)">
+            <summary>
+            Log debug 
+            </summary>
+            <param name="ErrorCode">a number that identify a debug information</param>
+            <param name="Error">debug information</param>    
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogDebug(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log debug 
+            </summary>
+            <param name="ErrorCode">a number that identify a debug information</param>
+            <param name="Error">debug information</param>
+            <param name="ex">if it is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogError(System.String)">
+            <summary>
+            Log error 
+            </summary>
+            <param name="Error">error information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogError(System.Int32,System.String)">
+            <summary>
+            Log error 
+            </summary>        
+            <param name="ErrorCode">a number that identify a error information</param>
+            <param name="Error">error information</param>        
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogError(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log error 
+            </summary>
+            <param name="ErrorCode">a number that identify a error information</param>
+            <param name="Error">error information</param>
+            <param name="ex">if it is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogInformation(System.String)">
+            <summary>
+            Log information
+            </summary>       
+            <param name="Error">Information details</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogInformation(System.Int32,System.String)">
+            <summary>
+            Log information
+            </summary>
+            <param name="ErrorCode">a number that identify the information details</param>
+            <param name="Error">Information details</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogInformation(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log information
+            </summary>
+            <param name="ErrorCode">a number that identify the information details</param>
+            <param name="Error">Information details</param>
+            <param name="ex">if the information is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogTrace(System.String)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="Error">trace information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogTrace(System.Int32,System.String)">
+            <summary>
+            Log for trace
+            </summary>
+            <param name="ErrorCode">a number that identify the trace information</param>
+            <param name="Error">trace information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogTrace(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log information
+            </summary>
+            <param name="ErrorCode">a number that identify the information details</param>
+            <param name="Error">Information details</param>
+            <param name="ex">if the information is associated with exception you can call this overload</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogWarning(System.String)">
+            <summary>
+            Log warning
+            </summary>
+            <param name="Error">warning information</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogWarning(System.Int32,System.String)">
+            <summary>
+            Log warning 
+            </summary>
+            <param name="ErrorCode">a number that identify the warning</param>
+            <param name="Error">warning details</param>
+        </member>
+        <member name="M:smartcardLib.Logging.ConsoleLogger.LogWarning(System.Int32,System.String,System.Exception)">
+            <summary>
+            Log warning 
+            </summary>
+            <param name="ErrorCode">a number that identify the warning</param>
+            <param name="Error">warning information</param>
+            <param name="ex">if warning is associated with exception you can call this overload</param>
+        </member>
+        <member name="T:smartcardLib.X509.X509Name">
+             <summary>
+              RDNSequence ::= SEQUENCE OF RelativeDistinguishedName
+                 RelativeDistinguishedName ::= SET SIZE(1..MAX) OF AttributeTypeAndValue
+              AttributeTypeAndValue::= SEQUENCE {
+            type OBJECT IDENTIFIER,
+            value ANY }
+             </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.C">
+            <summary>
+            country code - StringType(SIZE(2))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.O">
+            <summary>
+            organization - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.OU">
+            <summary>
+            organizational unit name - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.T">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.CN">
+            <summary>
+            common name - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.Street">
+            <summary>
+            street - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.SerialNumber">
+            <summary>
+            device serial number name - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.L">
+            <summary>
+            locality name - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.ST">
+            <summary>
+            state, or province name - StringType(SIZE(1..64))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.Surname">
+            <summary>
+            Naming attributes of type X520name
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.BusinessCategory">
+            <summary>
+            businessCategory - DirectoryString(SIZE(1..128)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.PostalCode">
+            <summary>
+            postalCode - DirectoryString(SIZE(1..40)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.DnQualifier">
+            <summary>
+            dnQualifier - DirectoryString(SIZE(1..64)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.Pseudonym">
+            <summary>
+            RFC 3039 Pseudonym - DirectoryString(SIZE(1..64)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.DateOfBirth">
+            <summary>
+            RFC 3039 DateOfBirth - GeneralizedTime - YYYYMMDD000000Z
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.PlaceOfBirth">
+            <summary>
+            RFC 3039 PlaceOfBirth - DirectoryString(SIZE(1..128)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.Gender">
+            <summary>
+            RFC 3039 DateOfBirth - PrintableString (SIZE(1)) -- "M", "F", "m" or "f"
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.CountryOfCitizenship">
+            <summary>
+            RFC 3039 CountryOfCitizenship - PrintableString (SIZE (2)) -- ISO 3166
+            codes only
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.CountryOfResidence">
+            <summary>
+            RFC 3039 CountryOfCitizenship - PrintableString (SIZE (2)) -- ISO 3166
+            codes only
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.NameAtBirth">
+            <summary>
+            ISIS-MTT NameAtBirth - DirectoryString(SIZE(1..64)
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.PostalAddress">
+            <summary>
+            RFC 3039 PostalAddress - SEQUENCE SIZE (1..6) OF
+            DirectoryString(SIZE(1..30))
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.DmdName">
+            <summary>
+            RFC 2256 dmdName
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.TelephoneNumber">
+            <summary>
+            id-at-telephoneNumber
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.Name">
+            <summary>
+            id-at-name
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.EmailAddress">
+            <summary>
+            Email address (RSA PKCS#9 extension) - IA5String.
+            <p>Note: if you're trying to be ultra orthodox, don't use this! It shouldn't be in here.</p>
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.UnstructuredName">
+            <summary>
+            more from PKCS#9
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.E">
+            <summary>
+            email address in Verisign certificates
+            </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.DC">
+            <summary>
+             others...
+             </summary>
+        </member>
+        <member name="F:smartcardLib.X509.X509Name.UID">
+            <summary>
+            LDAP User id.
+            </summary>
+        </member>
+        <member name="M:smartcardLib.X509.X509Name.#ctor(smartcardLib.Core.ASN1)">
+            <summary>
+            Constructor from Asn1Sequence
+            the principal will be a list of constructed sets, each containing an (OID, string) pair.
+            </summary>
+        </member>
+        <member name="M:smartcardLib.X509.X509Name.AppendValue(System.Text.StringBuilder,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String)">
+            <summary>
+            Append Name and values to a string buffer
+            </summary>
+            <param name="strBuffer"></param>
+            <param name="oidSymbols"></param>
+            <param name="oid"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:smartcardLib.X509.X509Name.ToString">
+            <summary>
+            Write the X509 Name in a readable format
+            </summary>
+            <returns>readable format</returns>
+        </member>
+    </members>
+</doc>

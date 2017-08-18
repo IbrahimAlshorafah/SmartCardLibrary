@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="69ed03d0-5ba3-491d-8c16-dc7fbbaf1f58" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>This project aims to provide a library for reading PKCS15 data from smartcards, the current state is a beta version </para>
+		</introduction>
+
+		<section>
+			<title>Getting Started</title>
+			<content>
+				<para>You can start by creating a virtual card, by default the virtual card is on the c:\virtualcards\ , this folder can virtually have mutliple Application each application
+can be configured with it AID as the directory name, in that Directory you can build the PKCS15 data you will need to put the DIR EF file which should be named 2F00 and include a binary of the DIR
+TLV, then the File heirarchary that follows by default you can use the class named PKCS15 to parse all data and read the output in the logging module by default [console]</para>
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="0f4e0191-5ccd-4849-9210-d2e57f36ab7c" />
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

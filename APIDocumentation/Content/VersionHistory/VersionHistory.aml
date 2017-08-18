@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="0f4e0191-5ccd-4849-9210-d2e57f36ab7c" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>The topics in this section describe the various changes made to the smartcard library over the
+life of the project.</para>
+		</introduction>
+
+		<section>
+			<title>Version History</title>
+			<content>
+				<para>Select a version below to see a description of its changes.</para>
+
+				<list class="bullet">
+					<listItem>
+						<para><link xlink:href="b160834a-03d5-4734-97e4-5fe370223a5f" /></para>
+					</listItem>
+
+					<listItem>
+						<para></para>
+					</listItem>
+
+				</list>
+
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="69ed03d0-5ba3-491d-8c16-dc7fbbaf1f58" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>
